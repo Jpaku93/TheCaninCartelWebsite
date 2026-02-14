@@ -129,35 +129,35 @@ const Home = () => {
         <div className="hero-grid">
           <div className="hero-text">
             <div className="hero-badge">
-              <span className="material-symbols-outlined">verified</span>
+              <span className="material-symbols-outlined bolt-icon">bolt</span>
               <span>THE CANINE CARTEL</span>
             </div>
-            <h1>MASTER <br />YOUR <br /><i className="italic-serif">PACK.</i></h1>
+            <h1>MASTER <br />YOUR <br /><span className="gold-italic">PACK.</span></h1>
             <p className="hero-subtext">
-              We don't just train dogs; we build elite partnerships. Expertly crafted canine coaching to help you build a lifelong bond with your canine.
+              We don't just train dogs; we build handlers. Experience elite communication and reclaim your relationship through science-based results.
             </p>
             <div className="hero-buttons">
-              <button className="btn-dark-pill" onClick={() => navigate('/booking')}>
+              <button className="btn-dark-pill" onClick={() => navigate('/booking', { state: { tab: 'private' } })}>
                 Join the Cartel <span className="material-symbols-outlined">arrow_forward</span>
               </button>
-              <button className="btn-outline-pill" onClick={() => navigate('/booking')}>
+              <button className="btn-outline-pill" onClick={() => navigate('/booking', { state: { tab: 'consultation' } })}>
                 Free Consultation
               </button>
             </div>
             <div className="social-proof">
               <div className="avatar-group">
-                {[1, 2, 3, 4].map(i => <div key={i} className="avatar-small"></div>)}
+                {[1, 2, 3, 4].map(i => <div key={i} className={`avatar-small avatar-${i}`}></div>)}
               </div>
-              <p>Join <b>30+ Happy Cartel Members</b> this year</p>
+              <p><b>500+ Packs</b> Transformed this year</p>
             </div>
           </div>
           <div className="hero-visual">
             <div className="hero-img-box">
               <img src="/DogTrainer5.jpg" alt="Douglas Training" />
-              <div className="review-overlay glass-effect">
-                <div className="stars-row">★★★★★</div>
-                <p>"Douglas transformed Max's reactivity into total focus. Drastically changed my life."</p>
-                <span className="review-author">- Sarah & Max</span>
+              <div className="review-overlay-pill">
+                <div className="review-stars">★★★★★</div>
+                <p>"Douglas achieved off-lead reliability with our GSD that we thought was impossible. Truly elite handling."</p>
+                <div className="review-author-line">— SARAH & LUNA</div>
               </div>
             </div>
           </div>
@@ -358,80 +358,144 @@ const Home = () => {
                     display: inline-flex;
                     align-items: center;
                     gap: 8px;
-                    color: #F59E0B;
-                    font-size: 11px;
+                    background: #FEF3C7;
+                    color: #D97706;
+                    padding: 8px 16px;
+                    border-radius: 50px;
+                    font-size: 10px;
                     font-weight: 800;
-                    letter-spacing: 2px;
-                    margin-bottom: 32px;
+                    letter-spacing: 1px;
+                    margin-bottom: 40px;
                 }
+                .bolt-icon { font-size: 14px; }
                 .hero-text h1 {
-                    font-size: 88px;
-                    line-height: 0.9;
-                    font-weight: 700;
+                    font-size: 100px;
+                    line-height: 0.85;
+                    font-weight: 900;
                     margin-bottom: 32px;
-                    letter-spacing: -3px;
+                    letter-spacing: -4px;
+                    color: #1a1a1a;
                 }
-                .italic-serif { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 700; }
-                .hero-subtext { font-size: 18px; color: #555; line-height: 1.7; margin-bottom: 48px; max-width: 500px; }
+                .gold-italic { 
+                    font-family: 'Playfair Display', serif; 
+                    font-style: italic; 
+                    color: #D97706; 
+                    font-weight: 700;
+                }
+                .hero-subtext { 
+                    font-size: 20px; 
+                    color: #666; 
+                    line-height: 1.5; 
+                    margin-bottom: 48px; 
+                    max-width: 480px; 
+                    font-weight: 400;
+                }
                 @media (max-width: 991px) { .hero-subtext { margin: 0 auto 48px; } }
 
-                .hero-buttons { display: flex; gap: 16px; margin-bottom: 48px; }
+                .hero-buttons { display: flex; gap: 16px; margin-bottom: 60px; }
                 @media (max-width: 991px) { .hero-buttons { justify-content: center; } }
                 
                 .btn-dark-pill {
-                    background: #F59E0B;
+                    background: #1C1917;
                     color: white;
-                    padding: 18px 42px;
+                    padding: 20px 36px;
                     border-radius: 50px;
                     font-weight: 900;
                     display: flex;
                     align-items: center;
                     gap: 12px;
                     font-size: 14px;
-                    letter-spacing: 1px;
+                    letter-spacing: 0.5px;
                     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-                    box-shadow: 0 15px 35px rgba(245, 158, 11, 0.4);
+                    border: none;
+                    cursor: pointer;
                 }
                 .btn-dark-pill:hover {
-                    background: #F59E0B;
+                    background: #000;
                     transform: scale(1.05) translateY(-4px);
-                    box-shadow: 0 25px 50px rgba(217, 119, 6, 0.5);
+                    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
                 }
                 .btn-outline-pill {
-                    background: transparent;
-                    border: 2px solid #E5E7EB;
+                    background: #FFFFFF;
+                    border: 1px solid #E5E7EB;
                     color: #1a1a1a;
-                    padding: 18px 42px;
+                    padding: 20px 36px;
                     border-radius: 50px;
                     font-weight: 800;
                     font-size: 14px;
-                    letter-spacing: 1px;
+                    letter-spacing: 0.5px;
                     transition: all 0.3s ease;
+                    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+                    cursor: pointer;
                 }
                 .btn-outline-pill:hover {
-                    border-color: #1C1917;
-                    background: #1C1917;
+                    background: #D97706;
+                    border-color: #D97706;
                     color: white;
                     transform: translateY(-2px);
+                    box-shadow: 0 10px 25px rgba(217, 119, 6, 0.3);
                 }
 
-                .social-proof { display: flex; align-items: center; gap: 16px; }
+                .social-proof { display: flex; align-items: center; gap: 20px; }
                 @media (max-width: 991px) { .social-proof { justify-content: center; } }
                 .avatar-group { display: flex; }
-                .avatar-small { width: 32px; height: 32px; border-radius: 50%; background: #F3F4F6; border: 2px solid white; margin-left: -8px; }
+                .avatar-small { 
+                    width: 36px; 
+                    height: 36px; 
+                    border-radius: 50%; 
+                    background-size: cover;
+                    background-position: center;
+                    border: 2px solid white; 
+                    margin-left: -12px; 
+                    background-color: #F3F4F6;
+                }
                 .avatar-small:first-child { margin-left: 0; }
-                .social-proof p { font-size: 12px; color: #666; }
+                /* Dummy avatar images */
+                .avatar-1 { background-image: url('https://i.pravatar.cc/100?u=1'); }
+                .avatar-2 { background-image: url('https://i.pravatar.cc/100?u=2'); }
+                .avatar-3 { background-image: url('https://i.pravatar.cc/100?u=3'); }
+                .avatar-4 { background-image: url('https://i.pravatar.cc/100?u=4'); }
+                
+                .social-proof p { font-size: 14px; color: #666; }
+                .social-proof p b { color: #1a1a1a; }
 
-                .hero-img-box { position: relative; border-radius: 40px; overflow: hidden; height: 600px; }
+                .hero-img-box { 
+                    position: relative; 
+                    border-radius: 100px; 
+                    overflow: hidden; 
+                    height: 700px; 
+                    box-shadow: 0 40px 100px rgba(0,0,0,0.1);
+                }
                 .hero-img-box img { width: 100%; height: 100%; object-fit: cover; }
                 
-                .review-overlay {
-                    position: absolute; bottom: 30px; left: 30px; right: 30px;
-                    padding: 24px; border-radius: 24px;
+                .review-overlay-pill {
+                    position: absolute; 
+                    bottom: 40px; 
+                    left: 40px; 
+                    right: 40px;
+                    padding: 32px; 
+                    border-radius: 40px;
+                    background: rgba(28, 25, 23, 0.7);
+                    backdrop-filter: blur(20px);
+                    border: 1px solid rgba(255,255,255,0.1);
+                    color: white;
                 }
-                .stars-row { color: #F59E0B; margin-bottom: 8px; font-size: 14px; }
-                .review-overlay p { font-size: 14px; font-weight: 600; line-height: 1.5; margin-bottom: 8px; }
-                .review-author { font-size: 12px; font-weight: 800; color: #F59E0B; }
+                .review-stars { color: #F59E0B; margin-bottom: 12px; font-size: 16px; }
+                .review-overlay-pill p { 
+                    font-size: 15px; 
+                    font-weight: 500; 
+                    line-height: 1.6; 
+                    margin-bottom: 16px; 
+                    font-style: italic; 
+                    color: rgba(255,255,255,0.9);
+                }
+                .review-author-line { 
+                    font-size: 11px; 
+                    font-weight: 800; 
+                    letter-spacing: 2px;
+                    color: #F59E0B; 
+                    text-transform: uppercase;
+                }
 
                 /* Find Path */
                 .find-path-section { background: #1C1917; padding: 30px 0; }
@@ -445,12 +509,18 @@ const Home = () => {
                 .step-tag { color: #F59E0B; font-size: 8px; font-weight: 800; letter-spacing: 2px; display: block; margin-bottom: 4px; }
                 .path-quiz h3 { font-size: 20px; color: #FFFFFF; margin-bottom: 20px; }
                 .quiz-options { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-                .quiz-options button {
+                 .quiz-options button {
                     background: rgba(255,255,255,0.05); color: white; border: 1px solid rgba(255,255,255,0.1);
                     padding: 12px 24px; border-radius: 12px; font-weight: 700; font-size: 13px;
-                    transition: var(--transition);
+                    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                    cursor: pointer;
                 }
-                .quiz-options button:hover { background: #F59E0B; border-color: #F59E0B; transform: translateY(-2px); }
+                .quiz-options button:hover { 
+                    background: #D97706; 
+                    border-color: #F59E0B; 
+                    transform: translateY(-3px) scale(1.02);
+                    box-shadow: 0 10px 20px rgba(217, 119, 6, 0.3);
+                }
                 
                 .quiz-result { text-align: center; padding: 10px 0; }
                 .result-icon { font-size: 40px; color: #F59E0B; margin-bottom: 12px; }
@@ -497,7 +567,16 @@ const Home = () => {
                 .tier-list { list-style: none; margin-bottom: 40px; }
                 .tier-list li { display: flex; items-center; gap: 12px; font-weight: 700; margin-bottom: 14px; }
                 .bullet-icon { color: #F59E0B; font-size: 20px; }
-                .btn-dark-small { background: #1C1917; color: white; padding: 16px 32px; border-radius: 12px; font-weight: 800; font-size: 13px; }
+                 .btn-dark-small { 
+                    background: #1C1917; color: white; padding: 16px 32px; border-radius: 12px; 
+                    font-weight: 800; font-size: 13px; border: none; cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+                .btn-dark-small:hover {
+                    background: #000;
+                    transform: translateY(-2px);
+                    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+                }
 
                 .tier-img-container { position: relative; border-radius: 40px; overflow: hidden; height: 400px; }
                 .tier-img-container img { width: 100%; height: 100%; object-fit: cover; }

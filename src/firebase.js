@@ -3,13 +3,13 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-    projectId: "canine-cartel-2026",
-    appId: "1:113292069614:web:5d540451e2db21c0db01ff",
-    storageBucket: "canine-cartel-2026.firebasestorage.app",
-    apiKey: "AIzaSyA_hLLnoJZZ7rAOOgWyw9p8AXbG1iUBvb4",
-    authDomain: "canine-cartel-2026.firebaseapp.com",
-    messagingSenderId: "113292069614",
-    measurementId: "G-G599M0Q7Y2"
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID
 };
 
 const app = initializeApp(firebaseConfig);
