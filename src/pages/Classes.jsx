@@ -361,7 +361,7 @@ const Classes = () => {
                     backface-visibility: hidden;
                     background: white;
                     border-radius: 48px;
-                    border: 1px solid #F0F0F0;
+                    border: 1px solid rgba(0, 0, 0, 0.08);
                     overflow: hidden;
                     display: flex;
                     flex-direction: column;
@@ -371,7 +371,7 @@ const Classes = () => {
                     padding: 40px;
                     background: #1C1917;
                     color: white;
-                    border-color: #F59E0B;
+                    border: 1px solid rgba(255, 255, 255, 0.15);
                 }
 
                 .card-image-wrapper { position: relative; height: 280px; border-radius: 40px; margin: 12px; overflow: hidden; }
@@ -471,7 +471,15 @@ const Classes = () => {
                     .blueprint-card:last-child { border-bottom: none; }
                 }
 
-                .blueprint-card { padding: 40px 0; text-align: left; transition: all 0.4s ease; cursor: default; }
+                .blueprint-card { 
+                    padding: 40px; 
+                    text-align: left; 
+                    transition: all 0.4s ease; 
+                    cursor: default; 
+                    border: 1px solid rgba(255, 255, 255, 0.05);
+                    border-radius: 32px;
+                }
+                .blueprint-card:hover { border-color: rgba(245, 158, 11, 0.3); background: rgba(255,255,255,0.02); }
                 .bp-icon-gold { color: #F59E0B; font-size: 40px; display: flex; align-items: center; justify-content: left; margin-bottom: 24px; transition: all 0.4s ease; }
                 .bp-icon-gold .material-symbols-outlined { font-size: 40px; transition: all 0.4s ease; }
                 .blueprint-card h3 { font-size: 22px; color: white; margin-bottom: 16px; transition: all 0.4s ease; }
@@ -511,7 +519,7 @@ const Classes = () => {
                     -webkit-backface-visibility: hidden;
                     backface-visibility: hidden;
                     border-radius: 32px;
-                    border: 1px solid #F0F0F0;
+                    border: 1px solid rgba(0, 0, 0, 0.08);
                     padding: 32px;
                     display: flex;
                     flex-direction: column;
@@ -524,7 +532,7 @@ const Classes = () => {
                     background: #1C1917;
                     color: white;
                     transform: rotateY(180deg);
-                    border-color: #F59E0B;
+                    border: 1px solid rgba(255, 255, 255, 0.15);
                 }
 
                 .focus-icon-pill { width: 56px; height: 56px; border-radius: 18px; display: flex; align-items: center; justify-content: center; }
@@ -552,7 +560,7 @@ const Classes = () => {
                 .faq-grid-interactive { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
                 @media (max-width: 768px) { .faq-grid-interactive { grid-template-columns: 1fr; } }
 
-                .faq-card-interactive { background: white; padding: 56px; border-radius: 48px; border: 1px solid #F0F0F0; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+                .faq-card-interactive { background: white; padding: 56px; border-radius: 48px; border: 1px solid rgba(0,0,0,0.08); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
                 .faq-card-interactive:hover { transform: translateY(-8px); box-shadow: 0 40px 80px rgba(0,0,0,0.08); }
                 .q-mark { 
                     width: 32px; height: 32px; background: #FEF3C7; color: #D97706; 
@@ -571,6 +579,38 @@ const Classes = () => {
                     margin-top: 32px; padding: 20px; background: #F8F7F5; 
                     border-radius: 16px; font-size: 13px; font-weight: 800; color: #1C1917; 
                     border-left: 4px solid #D97706;
+                }
+
+                /* Mobile Responsiveness Overrides */
+                @media (max-width: 768px) {
+                    .page-header { padding: 40px 20px; }
+                    .page-header h1 { font-size: 48px; letter-spacing: -1px; }
+                    .page-header p { font-size: 16px; }
+                    
+                    .program-card-container { height: 750px; }
+                    .card-body-content { padding: 24px; }
+                    .card-body-content h2 { font-size: 28px; }
+                    .program-card-front, .program-card-back { border-radius: 32px; }
+                    .program-card-back { padding: 32px; }
+                    
+                    .blueprint-header h2 { font-size: 32px; }
+                    .blueprint-header p { font-size: 16px; margin-bottom: 40px; }
+                    .blueprint-card { padding: 32px; border-radius: 24px; }
+                    
+                    .faq-section-refined { padding: 60px 20px; }
+                    .faq-card-interactive { padding: 32px; border-radius: 32px; }
+                    .faq-card-q h3 { font-size: 20px; }
+                    .faq-centered-header { margin-bottom: 40px; }
+                }
+
+                @media (max-width: 480px) {
+                    .page-header h1 { font-size: 42px; }
+                    .program-card-container { height: 720px; }
+                    .card-body-content h2 { font-size: 24px; }
+                    .btn-card-interactive { padding: 18px; font-size: 12px; }
+                    
+                    .focus-header-row h2 { font-size: 28px; }
+                    .focus-card-container { height: 340px; }
                 }
             `}</style>
     </div>

@@ -41,7 +41,10 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="footer-bottom-line">
-                    <p>© 2024 CANINE CARTEL. DESIGNED FOR PERFORMANCE.</p>
+                    <div className="footer-regions-row">
+                        <p>PROUDLY SERVING: Cumberland • Fairfield • Liverpool • Camden • Macarthur</p>
+                    </div>
+                    <p className="copyright-text">© 2024 CANINE CARTEL. DESIGNED FOR PERFORMANCE.</p>
                 </div>
             </div>
 
@@ -124,7 +127,9 @@ const Footer = () => {
                 }
 
                 .footer-bottom-line { padding-top: 40px; text-align: center; }
-                .footer-bottom-line p { color: #444; font-size: 10px; font-weight: 800; letter-spacing: 1.5px; }
+                .footer-regions-row { margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+                .footer-regions-row p { color: #666; font-size: 11px; font-weight: 700; letter-spacing: 1px; }
+                .copyright-text { color: #444; font-size: 10px; font-weight: 800; letter-spacing: 1.5px; }
             `}</style>
         </footer>
     );

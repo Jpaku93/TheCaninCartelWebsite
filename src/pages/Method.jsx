@@ -357,6 +357,37 @@ const Method = () => {
                 .alumni-card:hover img { transform: scale(1.1) rotate(2deg); }
                 
                 .alumni-cta-footer { text-align: center; }
+
+                /* Final Mobile Overrides */
+                @media (max-width: 768px) {
+                    .profile-hero-section { padding: 40px 0; }
+                    .profile-card-ultra { border-radius: 40px; }
+                    .profile-image-box { min-height: 400px; }
+                    
+                    .method-overview-section { padding: 40px 0; }
+                    .method-header-box h2 { font-size: 32px; }
+                    .method-item-card { padding: 32px; border-radius: 30px; }
+                    
+                    .dark-mastery-card { padding: 60px 20px; border-radius: 40px; }
+                    .dark-mastery-card h2 { font-size: 32px; }
+                    .mastery-grid-interactive { gap: 16px; margin-bottom: 40px; }
+                    
+                    .success-story-card-premium { border-radius: 40px; }
+                    .story-text-split { padding: 32px; }
+                    .story-text-split h3 { font-size: 24px; }
+                    
+                    .alumni-header-centered h2 { font-size: 28px; }
+                    .alumni-card { height: 260px; }
+                }
+
+                @media (max-width: 480px) {
+                    .profile-text-content h1 { font-size: 36px; }
+                    .profile-connect-row { flex-direction: column; }
+                    .connect-item { width: 100%; justify-content: flex-start; }
+                    
+                    .alumni-grid-interactive { grid-template-columns: 1fr; }
+                    .alumni-card { height: 320px; }
+                }
             `}</style>
     </div>
   );

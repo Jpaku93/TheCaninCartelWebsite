@@ -345,6 +345,65 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Regions Served Section */}
+      <section className="regions-section">
+        <div className="regions-header">
+          <span className="sub-label-gold">LOCAL OPERATIONAL REACH</span>
+          <h2>PROUDLY SERVING</h2>
+          <p>Elite canine education delivered across Sydney's primary growth corridors.</p>
+        </div>
+
+        <div className="regions-grid">
+          <div className="region-card interactive-card">
+            <span className="region-nickname">THE NORTHERN ANCHOR</span>
+            <h3>Cumberland Council</h3>
+            <p className="region-desc">Established, high-density residential areas serving as our northern operational base.</p>
+            <div className="region-hubs">
+              <strong>Primary Hub:</strong> Merrylands / Merrylands West
+            </div>
+            <div className="region-suburbs">
+              <strong>Key Suburbs:</strong> Greystanes, Pemulwuy, Guildford, Guildford West, Woodpark, Mays Hill, Granville (South).
+            </div>
+          </div>
+
+          <div className="region-card interactive-card">
+            <span className="region-nickname">THE CENTRAL LINK</span>
+            <h3>Fairfield City Council</h3>
+            <p className="region-desc">Moving south, the strategic bridge between the West and South West corridors.</p>
+            <div className="region-hubs">
+              <strong>Primary Hubs:</strong> Fairfield, Smithfield, Wetherill Park
+            </div>
+            <div className="region-suburbs">
+              <strong>Key Suburbs:</strong> Fairfield Heights & West, Prairiewood, Wakeley, Bossley Park, Abbotsbury, Canley Heights & Vale, Bonnyrigg & Heights, St Johns Park.
+            </div>
+          </div>
+
+          <div className="region-card interactive-card">
+            <span className="region-nickname">THE REGIONAL HEART</span>
+            <h3>Liverpool City Council</h3>
+            <p className="region-desc">The central "engine room" featuring a mix of established blocks and major growth estates.</p>
+            <div className="region-hubs">
+              <strong>Primary Hub:</strong> Liverpool CBD
+            </div>
+            <div className="region-suburbs">
+              <strong>Key Corridors:</strong> M5/Hume (Casula, Lurnea, Warwick Farm, Moorebank), The Western Belt (Hoxton Park, Prestons, Hinchinbrook, Green Valley), The Growth Fringe (Edmondson Park, Cecil Hills, Elizabeth Hills).
+            </div>
+          </div>
+
+          <div className="region-card interactive-card">
+            <span className="region-nickname">SOUTHERN GROWTH AREA</span>
+            <h3>Camden Council</h3>
+            <p className="region-desc">The "Macarthur" region: dominated by new, family-oriented master-planned estates.</p>
+            <div className="region-hubs">
+              <strong>Primary Hub:</strong> Gregory Hills
+            </div>
+            <div className="region-suburbs">
+              <strong>Key Developments:</strong> Oran Park, Gledswood Hills, Leppington, Denham Court, Narellan, Mount Annan, Catherine Field.
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       <style>{`
                 .home-page { background: #FFFFFF; width: 100%; }
@@ -659,10 +718,97 @@ const Home = () => {
                 .banner-footer { display: flex; justify-content: center; gap: 40px; color: #666; font-size: 13px; font-weight: 800; margin-top: 8px; }
                 .banner-footer span { display: flex; items-center; gap: 10px; }
 
+                /* Regions Section */
+                .regions-section { padding: 100px 40px; background: #F9FAFB; text-align: center; }
+                .regions-header { margin-bottom: 60px; }
+                .sub-label-gold { color: #D97706; font-weight: 800; font-size: 11px; letter-spacing: 3px; display: block; margin-bottom: 16px; }
+                .regions-header h2 { font-size: 56px; line-height: 0.9; margin-bottom: 16px; letter-spacing: -2px; }
+                .regions-header p { color: #666; font-size: 18px; max-width: 500px; margin: 0 auto; }
+                
+                .regions-grid {
+                  display: grid;
+                  grid-template-columns: repeat(2, 1fr);
+                  gap: 32px;
+                  max-width: 1200px;
+                  margin: 0 auto;
+                }
+                @media (max-width: 768px) {
+                  .regions-grid { grid-template-columns: 1fr; }
+                }
+                
+                .region-card {
+                  background: white;
+                  padding: 48px;
+                  border-radius: 40px;
+                  border: 1px solid rgba(0,0,0,0.06);
+                  text-align: left;
+                  transition: all 0.4s ease;
+                  display: flex;
+                  flex-direction: column;
+                }
+                .region-card:hover {
+                  border-color: #F59E0B;
+                  transform: translateY(-8px);
+                  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+                }
+                .region-nickname { 
+                    font-size: 10px; 
+                    font-weight: 900; 
+                    color: #F59E0B; 
+                    letter-spacing: 2px; 
+                    margin-bottom: 12px;
+                    text-transform: uppercase;
+                }
+                .region-card h3 { font-size: 24px; margin-bottom: 16px; color: #1a1a1a; letter-spacing: -0.5px; }
+                .region-desc { font-size: 15px; color: #666; line-height: 1.6; margin-bottom: 24px; flex-grow: 1; }
+                
+                .region-hubs, .region-suburbs {
+                    font-size: 13px;
+                    line-height: 1.6;
+                    color: #4B5563;
+                    padding-top: 16px;
+                    border-top: 1px solid #F3F4F6;
+                    margin-top: 16px;
+                }
+                .region-hubs strong, .region-suburbs strong { color: #1a1a1a; font-weight: 800; }
+                .region-suburbs { border: none; padding-top: 8px; margin-top: 0; }
+
                 .animate-fade-in { animation: fadeIn 0.6s ease-out; }
                 @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+                /* Mobile Optimizations */
+                @media (max-width: 768px) {
+                    .hero-text h1 { font-size: 64px; letter-spacing: -2px; }
+                    .hero-subtext { font-size: 16px; margin-bottom: 32px; }
+                    .hero-img-box { height: 500px; border-radius: 60px; }
+                    .review-overlay-pill { padding: 24px; bottom: 20px; left: 20px; right: 20px; border-radius: 30px; }
+                    
+                    .regions-section { padding: 60px 20px; }
+                    .regions-header h2 { font-size: 42px; }
+                    .region-card { padding: 32px; border-radius: 30px; }
+                    
+                    .banner-content h2 { font-size: 56px; letter-spacing: -1px; }
+                    .banner-content { padding: 60px 20px; border-radius: 40px; }
+                    .banner-footer { flex-direction: column; gap: 16px; }
+                    .btn-warm-orange { width: 100%; padding: 20px 32px; font-size: 14px; }
+                }
+
+                @media (max-width: 480px) {
+                    .hero-text h1 { font-size: 52px; }
+                    .hero-buttons { flex-direction: column; }
+                    .btn-dark-pill, .btn-outline-pill { width: 100%; justify-content: center; }
+                    
+                    .tiers-wrapper { padding: 40px 20px; }
+                    .tier-info h3 { font-size: 32px; }
+                    .tier-img-container { height: 300px; }
+                    
+                    .voice-section { padding: 40px 20px; }
+                    .voice-card { padding: 32px; }
+                    
+                    .banner-content h2 { font-size: 42px; }
+                }
             `}</style>
-    </div>
+    </div >
   );
 };
 
